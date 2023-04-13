@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../data/interceptors/listen_error_graphql_interceptor.dart';
+import '../resource/assets_constant/icon_constants.dart';
+import '../shared/network/constants/constants.dart';
+import '../shared/network/controllers/network_controller.dart';
+import '../shared/network/managers/network_manager.dart';
+import '../shared/utils/dialog_util.dart';
+import '../shared/widget_hico/dialog/normal_widget.dart';
+
+class BaseController extends FullLifeCycleController
+    with FullLifeCycleMixin, NetworkManager, ListenErrorGraphQL {
+  final _networkController = Get.find<NetworkController>();
+  BuildContext? dialogErrorNetworkContext;
+
+
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+
+    // check network
+    await checkConnectNetwork();
+  }
+
+  @override
+  void onDetached() {}
+
+  @override
+  void onInactive() {}
+
+  @override
+  void onPaused() {}
+
+  @override
+  Future<void> onResumed() async {
+    // check network
+    await checkConnectNetwork();
+  }
+
+  Future<void> checkConnectNetwork() async {
+    await _updateConnectNetwork(_networkController.connectionStatus.value);
+    _networkController.connectionStatus.listen(_updateConnectNetwork);
+  }
+
+  Future _updateConnectNetwork(int status) async {
+    if (status == NO_NETWORK) {
+      Get.back();
+      await _callDialogErrorNetwork();
+    } else {
+      if (dialogErrorNetworkContext != null) {
+        Navigator.of(dialogErrorNetworkContext!, rootNavigator: true).pop();
+        dialogErrorNetworkContext = null;
+      }
+    }
+  }
+
+  Future<void> _callDialogErrorNetwork() async {
+    if (dialogErrorNetworkContext == null) {
+      dialogErrorNetworkContext = Get.context!;
+
+      await DialogUtil.showPopup(
+        dialogSize: DialogSize.Popup,
+        barrierDismissible: false,
+        backgroundColor: Colors.transparent, 
+        child: NormalWidget(
+          icon: IconConstants.icFail,
+          title: 'notify.network.error'.tr,
+        ),
+        onVaLue: (value) async {
+          dialogErrorNetworkContext = null;
+          final status = await _networkController.checkConnectivity();
+          await _updateConnectNetwork(status);
+        },
+      );
+    }
+  }
+}

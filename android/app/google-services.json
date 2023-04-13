@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412790354709",
+    "project_id": "smr-express",
+    "storage_bucket": "smr-express.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412790354709:android:630bd3b71f12781ec3af1c",
+        "android_client_info": {
+          "package_name": "com.smr.logistic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412790354709-dkk7muihhpe4s1g6e63kop7nrr6o4246.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSYptjvBFV4jef632V5bzVAYT66G9e1yI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412790354709-dkk7muihhpe4s1g6e63kop7nrr6o4246.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
