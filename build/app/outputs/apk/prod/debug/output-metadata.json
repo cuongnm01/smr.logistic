@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.smr.logistic",
+  "variantName": "prodDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 2046,
+      "versionName": "2.0.4",
+      "outputFile": "app-prod-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

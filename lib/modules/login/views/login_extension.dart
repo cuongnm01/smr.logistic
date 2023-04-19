@@ -12,7 +12,7 @@ extension _LoginExtension on LoginScreen {
       decoration: TextFieldDecoration.borderLogin(
         backgroundColor: AppColor.primaryBackgroundColorLight,
         borderColor: AppColor.dividerColorLight,
-        hintText: ' Email',
+        hintText: ' Tài khoản',
         hintStype: AppTextStyle.regular(),
         prefixIcon: Padding(
           padding: const EdgeInsets.all(15),

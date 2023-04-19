@@ -12,7 +12,7 @@ extension _RegisterExtension on RegisterScreen {
       decoration: TextFieldDecoration.borderLogin(
         backgroundColor: AppColor.primaryBackgroundColorLight,
         borderColor: AppColor.dividerColorLight,
-        hintText: ' Email',
+        hintText: ' Tài khoản',
         hintStype: AppTextStyle.regular(),
       ),
       validator: (value) =>
@@ -49,44 +49,102 @@ extension _RegisterExtension on RegisterScreen {
     );
   }
 
-  Widget _buildConfirmPassword() {
+  Widget _buildFullname() {
     return TextFormField(
-        controller: controller.confirmPasswordController,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        obscureText: controller.hideRetypePassword.value,
-        cursorColor: AppColor.fifthTextColorLight,
-        style: AppTextStyle.regular(),
-        decoration: TextFieldDecoration.borderLogin(
-          backgroundColor: AppColor.primaryBackgroundColorLight,
-          borderColor: AppColor.dividerColorLight,
-          hintText: ' ${'confirm_password'.tr}',
-          hintStype: AppTextStyle.regular(),
-          suffixIcon: IconButton(
-            onPressed: () {
-              controller.hideShowRetypePassword();
-            },
-            icon: Icon(
-              controller.hideRetypePassword.value
-                  ? Icons.visibility
-                  : Icons.visibility_off,
-              color: AppColor.fifthTextColorLight,
-            ),
-          ),
-        ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'data_requied'.tr;
-          }
-        });
+      controller: controller.fullnameController,
+      autofocus: true,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: TextInputType.text,
+      cursorColor: AppColor.fifthTextColorLight,
+      style: AppTextStyle.regular(),
+      decoration: TextFieldDecoration.borderLogin(
+        backgroundColor: AppColor.primaryBackgroundColorLight,
+        borderColor: AppColor.dividerColorLight,
+        hintText: ' Họ tên',
+        hintStype: AppTextStyle.regular(),
+      ),
+      validator: (value) =>
+          (value == null || value.isEmpty) ? 'data_requied'.tr : null,
+    );
   }
 
-  InkWell _buildSocialBtn(Function()? onPress, String icon) {
-    return InkWell(
-      onTap: onPress,
+  Widget _buildPhoneNumber() {
+    return TextFormField(
+      controller: controller.phoneController,
+      autofocus: true,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: TextInputType.number,
+      cursorColor: AppColor.fifthTextColorLight,
+      style: AppTextStyle.regular(),
+      decoration: TextFieldDecoration.borderLogin(
+        backgroundColor: AppColor.primaryBackgroundColorLight,
+        borderColor: AppColor.dividerColorLight,
+        hintText: ' Số điện thoại',
+        hintStype: AppTextStyle.regular(),
+      ),
+      validator: (value) =>
+          (value == null || value.isEmpty) ? 'data_requied'.tr : null,
+    );
+  }
+
+  Widget _buildEmail() {
+    return TextFormField(
+      controller: controller.emailController,
+      autofocus: true,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: TextInputType.emailAddress,
+      cursorColor: AppColor.fifthTextColorLight,
+      style: AppTextStyle.regular(),
+      decoration: TextFieldDecoration.borderLogin(
+        backgroundColor: AppColor.primaryBackgroundColorLight,
+        borderColor: AppColor.dividerColorLight,
+        hintText: ' Email',
+        hintStype: AppTextStyle.regular(),
+      ),
+      validator: (value) =>
+          (value == null || value.isEmpty) ? 'data_requied'.tr : null,
+    );
+  }
+
+  Widget _buildAddress() {
+    return TextFormField(
+      controller: controller.addressController,
+      autofocus: true,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: TextInputType.text,
+      cursorColor: AppColor.fifthTextColorLight,
+      style: AppTextStyle.regular(),
+      decoration: TextFieldDecoration.borderLogin(
+        backgroundColor: AppColor.primaryBackgroundColorLight,
+        borderColor: AppColor.dividerColorLight,
+        hintText: ' Địa chỉ',
+        hintStype: AppTextStyle.regular(),
+      ),
+      validator: (value) =>
+          (value == null || value.isEmpty) ? 'data_requied'.tr : null,
+    );
+  }
+
+  Widget _buildDob() {
+    return GestureDetector(
+      onTap: controller.showDateOptionModalBottomSheet,
       child: Container(
-        child: Image.asset(
-          icon,
-          width: 48,
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        decoration: const BoxDecoration(
+            border: Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '${controller.dobText.value}',
+              style: AppTextStyle.regular(),
+            ),
+            const Icon(
+              Icons.calendar_month_outlined,
+              color: Colors.grey,
+              size: 20,
+            )
+          ],
         ),
       ),
     );

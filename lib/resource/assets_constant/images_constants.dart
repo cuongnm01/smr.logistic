@@ -73,7 +73,7 @@ class ImageConstants {
   static const String imageDemo =
       'lib/resource/assets_resources/images/image_demo.png';
   static const String avatar =
-      'lib/resource/assets_resources/images/add_avatar.png';
+      'lib/resource/assets_resources/images/avatar.png';
   static const String imageCardBefore =
       'lib/resource/assets_resources/images/image_before.png';
   static const String imageCardAfter =
@@ -86,4 +86,23 @@ class ImageConstants {
       'lib/resource/assets_resources/images/medical.png';
   static const String filterEmpty =
       'lib/resource/assets_resources/icons/filter_empty.svg';
+
+  //slider
+  static const String sliderDefault =
+      'lib/resource/assets_resources/images/slider.jpg';
+  static const String slider2Default =
+      'lib/resource/assets_resources/images/slider2.png';
+
+  //category
+  static const String cate1 = 'lib/resource/assets_resources/images/cate1.png';
+  static const String cate2 = 'lib/resource/assets_resources/images/cate2.jpeg';
+  static const String cate3 = 'lib/resource/assets_resources/images/cate3.jpeg';
+  static const String cate4 = 'lib/resource/assets_resources/images/cate4.jpeg';
+  static const String cate5 = 'lib/resource/assets_resources/images/cate5.png';
+  static const String cate6 = 'lib/resource/assets_resources/images/cate6.jpeg';
+
+  static const String truck = 'lib/resource/assets_resources/images/truck.svg';
+  static const String money = 'lib/resource/assets_resources/images/money.svg';
+  static const String phone = 'lib/resource/assets_resources/images/phone.svg';
+  static const String box = 'lib/resource/assets_resources/images/box.svg';
 }

@@ -37,5 +37,4 @@ class TokenInterceptor extends Interceptor {
   //   if (unauthorizedTokenCodes.contains(response.statusCode)) {}
   //   return super.onResponse(response, handler);
   // }
-
 }

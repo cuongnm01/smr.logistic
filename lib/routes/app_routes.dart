@@ -14,7 +14,6 @@ abstract class Routes {
   static const FORGOT_PASSWORD_CHANGE = '/forgot_password_change';
 
   static const MAIN = '/main';
-  static const MAIN_GUEST = '/main_guest';
 
   static const HOME = '/home';
   static const ORDER_LIST = '/order_list';
@@ -23,6 +22,10 @@ abstract class Routes {
   static const NEWS_LIST = '/news_list';
   static const ACCOUNT = '/account';
   static const CHANGE_PASS = '/change_pass';
-  
 
+  static const PROFILE = '/profile';
+  static const ORDER_PRODUCT = '/order_product';
+  static const CATEGORIES = '/categoris';
+  static const PRODUCTS = '/products';
+  static const ORDER_HISTORY = '/order_history';
 }

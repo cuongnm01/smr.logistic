@@ -50,10 +50,10 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'Đơn hàng',
                   style: AppTextStyle.regular().copyWith(
-                        color: tabIndex == 0
-                            ? AppColor.primaryTextColorLight
-                            : AppColor.menuTextColorLight,
-                      ),
+                    color: tabIndex == 0
+                        ? AppColor.primaryTextColorLight
+                        : AppColor.menuTextColorLight,
+                  ),
                 )
               ],
             ),
@@ -71,10 +71,10 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'Thông báo',
                   style: AppTextStyle.regular().copyWith(
-                        color: tabIndex == 1
-                            ? AppColor.primaryTextColorLight
-                            : AppColor.menuTextColorLight,
-                      ),
+                    color: tabIndex == 1
+                        ? AppColor.primaryTextColorLight
+                        : AppColor.menuTextColorLight,
+                  ),
                 )
               ],
             ),
@@ -92,10 +92,10 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'Tin tức',
                   style: AppTextStyle.regular().copyWith(
-                        color: tabIndex == 2
-                            ? AppColor.primaryTextColorLight
-                            : AppColor.menuTextColorLight,
-                      ),
+                    color: tabIndex == 2
+                        ? AppColor.primaryTextColorLight
+                        : AppColor.menuTextColorLight,
+                  ),
                 )
               ],
             ),
@@ -113,10 +113,10 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'Tài khoản',
                   style: AppTextStyle.regular().copyWith(
-                        color: tabIndex == 3
-                            ? AppColor.primaryTextColorLight
-                            : AppColor.menuTextColorLight,
-                      ),
+                    color: tabIndex == 3
+                        ? AppColor.primaryTextColorLight
+                        : AppColor.menuTextColorLight,
+                  ),
                 )
               ],
             ),

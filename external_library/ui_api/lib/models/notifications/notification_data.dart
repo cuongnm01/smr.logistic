@@ -47,7 +47,7 @@ class NotificationData {
   String? sender;
   @JsonKey(name: 'channel_id')
   String? channelId;
-  String? callId; 
+  String? callId;
   String? callIsVideo;
   String? callerName;
   String? callerPic;

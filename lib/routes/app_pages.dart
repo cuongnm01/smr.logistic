@@ -1,25 +1,23 @@
 import 'package:get/get.dart';
 
-import '../modules/forgot_password/bindings/forgot_password_binding.dart';
-import '../modules/forgot_password/views/forgot_password_change_screen.dart';
-import '../modules/forgot_password/views/forgot_password_otp_screen.dart';
-import '../modules/forgot_password/views/forgot_password_screen.dart';
-import '../modules/language/binding/language_binding.dart';
-import '../modules/language/view/language_screen.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_screen.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_screen.dart';
-import '../modules/main_guest/bindings/main_guest_binding.dart';
-import '../modules/main_guest/views/main_guest_screen.dart';
-import '../modules/news_list/bindings/news_list_binding.dart';
-import '../modules/news_list/views/news_list_screen.dart';
 import '../modules/on_boarding/binding/on_boarding_binding.dart';
 import '../modules/on_boarding/view/on_boarding_screen.dart';
+import '../modules/order_product/categories/bindings/categories_binding.dart';
+import '../modules/order_product/categories/views/categories_screen.dart';
+import '../modules/order_product/order_history/bindings/order_history_binding.dart';
+import '../modules/order_product/order_history/views/order_history_screen.dart';
+import '../modules/order_product/order_product/bindings/order_product_binding.dart';
+import '../modules/order_product/order_product/views/order_product_screen.dart';
+import '../modules/order_product/products/bindings/products_binding.dart';
+import '../modules/order_product/products/views/products_screen.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_screen.dart';
 import '../modules/register/bindings/register_binding.dart';
-import '../modules/register/views/register_otp_screen.dart';
 import '../modules/register/views/register_screen.dart';
-import '../modules/register/views/register_success_screen.dart';
 import '../modules/splash/binding/splash_binding.dart';
 import '../modules/splash/view/splash_screen.dart';
 
@@ -32,11 +30,6 @@ final routePages = [
     name: Routes.SPLASH,
     page: () => SplashScreen(),
     binding: SplashBinding(),
-  ),
-  GetPage(
-    name: Routes.LANGUAGE,
-    page: () => LanguageScreen(),
-    binding: LanguageBinding(),
   ),
   GetPage(
     name: Routes.ONBOARDING,
@@ -57,48 +50,36 @@ final routePages = [
     page: () => RegisterScreen(),
     binding: RegisterBinding(),
   ),
-  GetPage(
-    name: Routes.REGISTER_OTP,
-    page: () => RegisterOtpScreen(),
-    binding: RegisterBinding(),
-  ),
-  GetPage(
-    name: Routes.REGISTER_SUCCESS,
-    page: () => RegisterSuccessScreen(),
-    binding: RegisterBinding(),
-  ),
 
-  //forgot pass
-  GetPage(
-    name: Routes.FORGOT_PASSWORD,
-    page: () => ForgotPasswordScreen(),
-    binding: ForgotPasswordBinding(),
-  ),
-  GetPage(
-    name: Routes.FORGOT_PASSWORD_OTP,
-    page: () => ForgotPasswordOTPScreen(),
-    binding: ForgotPasswordBinding(),
-  ),
-  GetPage(
-    name: Routes.FORGOT_PASSWORD_CHANGE,
-    page: () => ForgotPasswordChangeScreen(),
-    binding: ForgotPasswordBinding(),
-  ),
   GetPage(
     name: Routes.MAIN,
     page: () => MainScreen(),
     binding: MainBinding(),
   ),
+
   GetPage(
-    name: Routes.MAIN_GUEST,
-    page: () => MainGuestScreen(),
-    binding: MainGuestBinding(),
+    name: Routes.PROFILE,
+    page: () => ProfileScreen(),
+    binding: ProfileBinding(),
   ),
-
   GetPage(
-      name: Routes.NEWS_LIST,
-      page: () => NewsListScreen(),
-      binding: NewsListBinding()),
-
- 
+    name: Routes.ORDER_PRODUCT,
+    page: () => OrderProductScreen(),
+    binding: OrderProductBinding(),
+  ),
+  GetPage(
+    name: Routes.CATEGORIES,
+    page: () => CategoriesScreen(),
+    binding: CategoriesBinding(),
+  ),
+  GetPage(
+    name: Routes.PRODUCTS,
+    page: () => ProductsScreen(),
+    binding: ProductsBinding(),
+  ),
+  GetPage(
+    name: Routes.ORDER_HISTORY,
+    page: () => OrderHistoryScreen(),
+    binding: OrderHistoryBinding(),
+  ),
 ];

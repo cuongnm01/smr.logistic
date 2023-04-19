@@ -12,7 +12,7 @@ DistrictResponse _$DistrictResponseFromJson(Map<String, dynamic> json) =>
           ?.map((e) => DistrictsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -20,7 +20,7 @@ DistrictResponse _$DistrictResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DistrictResponseToJson(DistrictResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.districts,

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:app/base/base_binding.dart';
 import 'package:app/modules/on_boarding/controller/on_boarding_controller.dart';
-import '/modules/language/controller/language_controller.dart';
 
 class OnBoardingBinding extends BaseBinding {
   @override

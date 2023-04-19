@@ -12,7 +12,7 @@ MasterDataResponse _$MasterDataResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : MasterDataModel.fromJson(json['data'] as Map<String, dynamic>),
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -20,7 +20,7 @@ MasterDataResponse _$MasterDataResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MasterDataResponseToJson(MasterDataResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.masterDataModel,

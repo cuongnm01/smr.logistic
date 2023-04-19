@@ -2,7 +2,7 @@ part of 'account_screen.dart';
 
 extension AccountExtension on AccountScreen {
   Widget buildItem({
-    required String icon,
+    required Icon icon,
     required String title,
     Function()? onPress,
     Color? titleColor,
@@ -11,18 +11,9 @@ extension AccountExtension on AccountScreen {
     return InkWell(
       onTap: onPress,
       child: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.shadowColorLight.withOpacity(0.8),
-              spreadRadius: 3,
-              blurRadius: 7,
-              offset: const Offset(0, 3),
-            ),
-          ],
         ),
         child: Row(
           children: [
@@ -30,18 +21,19 @@ extension AccountExtension on AccountScreen {
                 child: Row(
               children: [
                 Container(
-                    margin: const EdgeInsets.only(right: 14),
-                    child: FCoreImage(icon)),
-                Text(
-                  title,
-                  style: AppTextStyle.regular().copyWith(
-                        color: titleColor ?? Colors.black,
-                      ),
-                ),
+                    margin: const EdgeInsets.only(right: 14), child: icon),
+                Text(title,
+                    style: AppTextStyle.regular(
+                      color: titleColor ?? Colors.black,
+                    )),
               ],
             )),
             (allowArrow == 1)
-                ? FCoreImage(IconConstants.icArrowForward)
+                ? Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColor.primaryColor,
+                    size: 18,
+                  )
                 : Container()
           ],
         ),

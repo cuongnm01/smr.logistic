@@ -48,10 +48,10 @@ void configLoading() {
     ..loadingStyle = EasyLoadingStyle.custom
     ..indicatorSize = 45.0
     ..radius = 10.0
-    ..progressColor = AppColor.accentColorLight
+    ..progressColor = AppColor.primaryColor
     ..backgroundColor = AppColor.primaryBackgroundColorLight
-    ..indicatorColor = AppColor.primaryColorLight
-    ..textColor = AppColor.primaryColorLight
+    ..indicatorColor = AppColor.primaryColor
+    ..textColor = AppColor.primaryColor
     ..maskColor = AppColor.errorColor
     ..userInteractions = false
     ..dismissOnTap = false

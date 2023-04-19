@@ -33,7 +33,6 @@ Future<void> showCallkitIncoming(NotificationData notificationData) async {
   debugPrint(
       '[FirebaseMessageConfig] showCallkitIncoming ${notificationData.toJson().toString()}');
 
- 
   try {
     if (Platform.isIOS) {
       SharedPreferencesIOS.registerWith();
@@ -72,8 +71,6 @@ Future<void> showCallkitIncoming(NotificationData notificationData) async {
         textMissedCall = 'Có cuộc gọi nhỡ';
         textCallback = 'Gọi lại';
     }
-
-
   } catch (e) {
     debugPrint('[FirebaseMessageConfig] $e');
   }
@@ -464,11 +461,9 @@ class FirebaseMessageConfig {
     });
   }
 
-  
-
   Future<void> reloadBalance() async {
     await _uiRepository.getInfo().then((response) {
-      if (response.status == CommonConstants.statusOk &&
+      if (response.isSuccess == CommonConstants.statusOk &&
           response.data != null &&
           response.data!.info != null) {
         AppDataGlobal.userInfo = response.data!.info!;

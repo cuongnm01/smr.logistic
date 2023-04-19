@@ -9,25 +9,23 @@ import '../../../data/app_data_global.dart';
 import '../../../routes/app_pages.dart';
 import '../../../shared/constants/storage.dart';
 import '../../../shared/utils/dialog_util.dart';
-import '../../../shared/widget_hico/dialog/dialog_confirm_widget.dart';
-import '../../../shared/widget_hico/dialog/logout_widget.dart';
+import '../../../shared/widget/dialog/logout_widget.dart';
 
 class AccountController extends BaseController {
-  final _uiRepository = Get.find<AppUIRepository>();
   final _storage = Get.find<SharedPreferences>();
+  final userInfo = Rxn<UserInfoModel>();
 
-  Rx<UserInfoModel> info = Rx(UserInfoModel());
+  AccountController();
 
-  AccountController() {
-    //loadData();
-  }
- 
-  Future<void> loadData() async {
-    info.value = AppDataGlobal.userInfo!;
+  @override
+  Future<void> onInit() async {
+    await super.onInit();
+    userInfo.value = AppDataGlobal.userInfo;
   }
 
-  Future<void> updateInfo() async {
-  }
+  Future<void> loadData() async {}
+
+  Future<void> updateInfo() async {}
 
   Future<void> onLogout() async {
     await DialogUtil.showPopup(
@@ -38,45 +36,13 @@ class AccountController extends BaseController {
       onVaLue: (_value) {
         if (_value != null && _value is int) {
           if (_value == 1) {
-            _uiRepository.logout().then((response) {
-              AppDataGlobal.accessToken = '';
-              _storage.setBool(StorageConstants.isLogin, false);
-              _storage.setBool(StorageConstants.isSocial, false);
-              _storage.setString(StorageConstants.token, '');
-
-              Get.offAllNamed(Routes.MAIN_GUEST);
-            });
+            AppDataGlobal.accessToken = '';
+            _storage.setBool(StorageConstants.isLogin, false);
+            _storage.setString(StorageConstants.token, '');
+            Get.offAllNamed(Routes.LOGIN);
           }
         }
       },
     );
   }
-
-  Future<void> deleteUser() async {
-    await DialogUtil.showPopup(
-      dialogSize: DialogSize.Popup,
-      barrierDismissible: false,
-      backgroundColor: Colors.transparent,
-      child: DialogConfirmWidget(
-        title: 'account.required_delete'.tr,
-        description: 'account.description_delete'.tr,
-      ),
-      onVaLue: (_value) {
-        if (_value != null && _value is bool) {
-          if (_value == true) {
-            _uiRepository.deleteUser().then((response) {
-              AppDataGlobal.accessToken = '';
-              _storage.setBool(StorageConstants.isLogin, false);
-              _storage.setBool(StorageConstants.isSocial, false);
-              _storage.setString(StorageConstants.token, '');
-              Get.offAllNamed(Routes.ONBOARDING);
-            });
-          }
-        }
-      },
-    );
-  }
-
-  @override
-  void onClose() {}
 }

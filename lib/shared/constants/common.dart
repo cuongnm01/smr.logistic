@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class CommonConstants {
@@ -11,10 +10,12 @@ class CommonConstants {
   static String orderID = '';
   static const dateFormat = 'dd/MM/yyyy';
   static const timeFormat = 'HH:mm';
+  static const dateTimeFormat = 'dd/MM/yyyy';
+
   static const int male = 1;
   static const int female = 2;
-  static const int statusOk = 1;
-  static const int statusFailed = 0;
+  static const bool statusOk = true;
+  static const bool statusFailed = false;
   static const double paddingDefault = 20;
   static const int limit = 20;
 

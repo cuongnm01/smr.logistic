@@ -202,7 +202,7 @@ class DialogUtil {
     );
   }
 
-static Future createDialogMessage({
+  static Future createDialogMessage({
     required String message,
     BuildContext? context,
     String? title,
@@ -240,7 +240,7 @@ static Future createDialogMessage({
                 style: TextButton.styleFrom(
                   minimumSize: const Size(100, 50),
                   padding: EdgeInsets.zero,
-                  backgroundColor: AppColor.buttonBackgroundColor,
+                  backgroundColor: AppColor.primaryColor,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(0),

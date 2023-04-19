@@ -11,7 +11,7 @@ BankResponse _$BankResponseFromJson(Map<String, dynamic> json) => BankResponse(
           ? null
           : BankRowsModel.fromJson(json['data'] as Map<String, dynamic>),
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -19,7 +19,7 @@ BankResponse _$BankResponseFromJson(Map<String, dynamic> json) => BankResponse(
 
 Map<String, dynamic> _$BankResponseToJson(BankResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.data,
@@ -31,7 +31,7 @@ BankRowsModel _$BankRowsModelFromJson(Map<String, dynamic> json) =>
           ?.map((e) => BankLocalModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -39,7 +39,7 @@ BankRowsModel _$BankRowsModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$BankRowsModelToJson(BankRowsModel instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'rows': instance.rows,

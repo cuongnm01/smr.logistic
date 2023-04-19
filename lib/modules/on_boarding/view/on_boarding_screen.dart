@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../resource/assets_constant/images_constants.dart';
 import '../../../shared/constants/colors.dart';
 import '../../../shared/styles/text_style/text_style.dart';
-import '../../../shared/widget_hico/button/general_button.dart';
+import '../../../shared/widget/button/general_button.dart';
 import '../../../shared/widgets/carousel/slider_widget.dart';
 import '../controller/on_boarding_controller.dart';
 
@@ -54,9 +54,9 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                       child: Text(
                         'register'.tr,
                         style: AppTextStyle.regular().copyWith(
-                              color: AppColor.primaryTextColorLight,
-                              fontWeight: FontWeight.w700,
-                            ),
+                          color: AppColor.primaryTextColorLight,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),

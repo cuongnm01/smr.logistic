@@ -7,7 +7,7 @@ import '../../../resource/assets_constant/icon_constants.dart';
 import '../../../resource/assets_constant/images_constants.dart';
 import '../../../routes/app_pages.dart';
 import '../../../shared/utils/dialog_util.dart';
-import '../../../shared/widget_hico/dialog/normal_widget.dart';
+import '../../../shared/widget/dialog/normal_widget.dart';
 
 class OnBoardingController extends BaseController {
   OnBoardingController() {

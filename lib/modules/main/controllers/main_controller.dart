@@ -1,84 +1,71 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:ui_api/models/notifications/notification_data.dart';
-import 'package:ui_api/repository/app_ui_repository.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../base/base_controller.dart';
-import '../../../data/app_data_global.dart';
-import '../../../routes/app_pages.dart';
-import '../../../shared/constants/common.dart';
 import '../../account/controllers/account_controller.dart';
 import '../../account/views/account_screen.dart';
+import '../../contact/controllers/contact_controller.dart';
+import '../../contact/views/contact_screen.dart';
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home_screen.dart';
-import '../../news/controllers/news_controller.dart';
-import '../../news/views/news_screen.dart';
-import '../../notification/controllers/notification_controller.dart';
-import '../../notification/views/notification_screen.dart';
+import '../../order_home/controllers/order_home_controller.dart';
+import '../../order_home/views/order_home_screen.dart';
+import '../../price/controllers/price_controller.dart';
+import '../../price/views/Price_screen.dart';
 
 class MainController extends BaseController {
-  final _uiRepository = Get.find<AppUIRepository>();
-
   Rx<int> index = Rx(0);
   Rx<int> badge = Rx(0);
 
   List<Widget> tabs = [];
   late HomeController homeController;
-  late NotificationController notificationController;
-  final newsController = NewsController();
+  final orderHomeController = OrderHomeController();
+  final priceController = PriceController();
+  final contactController = ContactController();
+
   final accountController = AccountController();
   // int? tab;
 
   MainController() {
     homeController = HomeController();
-    notificationController = NotificationController(this);
     tabs = [
       HomeScreen(homeController),
-      HomeScreen(homeController),
-      NotificationScreen(notificationController),
-      NewsScreen(newsController),
+      PriceScreen(priceController),
+      OrderHomeScreen(orderHomeController),
+      ContactScreen(contactController),
       AccountScreen(accountController),
     ];
-
-    // if (tab != null) {
-    //   changeIndex(1);
-    // }
   }
 
   @override
   Future<void> onInit() async {
     await super.onInit();
 
-    await homeController.loadData();
-    await countNotifyUnread();
+    await homeController.onInit();
   }
 
   Future<void> changeIndex(int _index) async {
     if (_index != index.value) {
       if (_index == 0) {
-        await homeController.loadData();
+        await homeController.onInit();
       } else if (_index == 1) {
-        await homeController.loadData();
+        // await openLink('http://smrvanchuyenquocte.vn/bang-gia');
+        await priceController.onInit();
       } else if (_index == 2) {
-        await notificationController.loadData();
+        await orderHomeController.onInit();
       } else if (_index == 3) {
-        await newsController.loadNewsList();
+        await contactController.onInit();
       } else if (_index == 4) {
-        await accountController.loadData();
+        await accountController.onInit();
       }
     }
     index.value = _index;
-
-    await countNotifyUnread();
   }
 
-  Future<void> countNotifyUnread() async {
-  }
-
-  Future<void> onChat(String channelId) async {
-    await EasyLoading.dismiss();
+  Future<void> openLink(String url) async {
+    final _url = Uri.parse(url);
+    await launchUrl(_url);
   }
 }

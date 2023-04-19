@@ -390,4 +390,7 @@ class IconConstants {
   static const String icTimeCircle =
       'lib/resource/assets_resources/icons/time_circle.svg';
   static const String icMap = 'lib/resource/assets_resources/icons/map.svg';
+
+  static const String package =
+      'lib/resource/assets_resources/icons/package.svg';
 }

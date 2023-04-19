@@ -11,7 +11,7 @@ NotificationUnreadResponse _$NotificationUnreadResponseFromJson(
     NotificationUnreadResponse(
       data: json['data'] as int?,
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -20,7 +20,7 @@ NotificationUnreadResponse _$NotificationUnreadResponseFromJson(
 Map<String, dynamic> _$NotificationUnreadResponseToJson(
         NotificationUnreadResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.data,

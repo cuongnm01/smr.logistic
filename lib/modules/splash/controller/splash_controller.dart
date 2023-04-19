@@ -10,7 +10,6 @@ import '../../../routes/app_pages.dart';
 import '../../../shared/constants/common.dart';
 import '../../../shared/constants/storage.dart';
 import '../../../shared/services/firebase_cloud_messaging.dart';
-import '../../../shared/utils/chat_util.dart';
 
 class SplashController extends GetxController {
   final _uiRepository = Get.find<AppUIRepository>();
@@ -34,34 +33,13 @@ class SplashController extends GetxController {
   }
 
   Future<void> loadInitSplashScreen() async {
-    // await Future.delayed(const Duration(milliseconds: 1000));
     _loadTheme(storage);
     await _loadMasterData();
     _loadLanguage(storage);
 
     final isLogin = storage.getBool(StorageConstants.isLogin);
-    final isSocial = storage.getBool(StorageConstants.isSocial);
     if (isLogin != null && isLogin) {
       _autoLogin();
-    } else if (isSocial != null && isSocial) {
-      final token = storage.getString(StorageConstants.token);
-      AppDataGlobal.accessToken = token!;
-      try {
-        await _uiRepository.getInfo().then((response) {
-          if (response.status == CommonConstants.statusOk &&
-              response.data != null &&
-              response.data!.info != null) {
-            _loadData(response.data!.info!);
-            return;
-          } else {
-            Get.offAndToNamed(Routes.LOGIN);
-          }
-        }).catchError((error) {
-          Get.offAndToNamed(Routes.LOGIN);
-        });
-      } catch (e) {
-        await Get.offAndToNamed(Routes.LOGIN);
-      }
     } else {
       await Get.offAndToNamed(Routes.LOGIN);
     }
@@ -72,21 +50,21 @@ class SplashController extends GetxController {
     final password = storage.getString(StorageConstants.password);
     _uiRepository
         .login(LoginRequest(
-            email: username,
+            username: username,
             password: password,
             deviceIdentifier: AppDataGlobal.firebaseToken))
         .then((response) {
-      if (response.status == CommonConstants.statusOk &&
+      if (response.isSuccess == CommonConstants.statusOk &&
           response.loginModel != null &&
-          response.loginModel!.info != null) {
-        AppDataGlobal.accessToken = response.loginModel!.accessToken ?? '';
-        _loadData(response.loginModel!.info!);
+          response.loginModel!.userInfo != null) {
+        AppDataGlobal.accessToken = response.loginModel!.token ?? '';
+        _loadData(response.loginModel!.userInfo!);
       } else {
         storage.setBool(StorageConstants.isLogin.toString(), false);
         Get.offAndToNamed(Routes.MAIN);
       }
     }).catchError((error) {
-      Get.offAndToNamed(Routes.MAIN_GUEST);
+      Get.offAndToNamed(Routes.LOGIN);
     });
   }
 
@@ -126,11 +104,16 @@ class SplashController extends GetxController {
   }
 
   Future<void> _loadMasterData() async {
-    await _uiRepository.masterData().then((response) {
-      if (response.status == CommonConstants.statusOk &&
-          response.masterDataModel != null) {
-        AppDataGlobal.masterData = response.masterDataModel!;
-        return;
+    await _uiRepository.getShippingType().then((response) {
+      if (response.isSuccess == CommonConstants.statusOk &&
+          response.data != null) {
+        AppDataGlobal.shippingType = response.data!;
+      }
+    });
+    await _uiRepository.getServiceType().then((response) {
+      if (response.isSuccess == CommonConstants.statusOk &&
+          response.data != null) {
+        AppDataGlobal.serviceType = response.data!;
       }
     });
   }

@@ -83,20 +83,30 @@ dependencies:
   flutter_app_badger: ^1.4.0
   device_info_plus: ^4.0.0 
   extended_masked_text: ^2.3.1
-
+  flutter_form_builder: ^7.7.0
+  form_builder_validators: ^8.3.0
   # Border dotted
   getwidget: ^2.0.4
 
   permission_handler: ^9.2.0
   flutter_ringtone_player: ^3.2.0
   keyboard_dismisser: ^2.0.1
-  webview_flutter: ^3.0.2
+  webview_flutter: ^4.0.7
   easy_rich_text: ^1.1.0
   vibration: ^1.7.6
 
   #flutter3
   pull_to_refresh_flutter3: ^2.0.1
   google_fonts: ^3.0.1
+  tiengviet: ^0.5.0
+
+  # Date picker
+  flutter_calendar_carousel: ^2.4.1
+  flutter_datetime_picker:
+    git:
+      url: https://github.com/AlexHartford/flutter_datetime_picker.git
+      ref: master
+
 
 dependency_overrides:
   firebase_core_platform_interface: 4.5.1
@@ -129,7 +139,6 @@ flutter:
     - lib/resource/assets_resources/bell/
     - lib/resource/assets_resources/icons/
     - lib/resource/assets_resources/images/
-    - lib/resource/assets_resources/images/service_book_online/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:app/shared/widget_hico/image_widget/network_image.dart';
+
 import '../../styles/text_style/text_style.dart';
+import '../../widget/image_widget/network_image.dart';
 import '../image_widget/fcore_image.dart';
 
 class SliderItem {
@@ -31,7 +32,9 @@ class SliderWidget extends StatefulWidget {
     this.decoration,
     this.showIndicator = true,
     this.ratio,
+    this.radius,
     this.localImage = true,
+    this.width,
   }) : super(key: key);
 
   final String? title;
@@ -44,7 +47,9 @@ class SliderWidget extends StatefulWidget {
   final BoxDecoration? decoration;
   final bool showIndicator;
   final double? ratio;
+  final double? radius;
   final bool localImage;
+  final double? width;
 
   @override
   _SliderWidgetState createState() => _SliderWidgetState();
@@ -55,17 +60,9 @@ class _SliderWidgetState extends State<SliderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Widget imgBuild(String? url, int i) {
-      if (widget.imageBuilder == null) {
-        return Image.network(url!);
-      } else {
-        return widget.imageBuilder!(url, i);
-      }
-    }
-
     return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      width: widget.width,
+      child: Stack(
         children: [
           if (widget.items.isNotEmpty)
             CarouselSlider(
@@ -75,23 +72,24 @@ class _SliderWidgetState extends State<SliderWidget> {
                   return InkWell(
                     onTap: widget.items[index].onpress,
                     child: Container(
+                      decoration: widget.decoration,
                       child: Column(
                         children: [
                           Container(
-                            margin: widget.localImage
-                                ? const EdgeInsets.all(0)
-                                : const EdgeInsets.only(
-                                    top: 5, left: 20, right: 20),
                             width: double.infinity,
                             decoration: widget.decoration,
                             child: widget.localImage
                                 ? FCoreImage(
                                     widget.items[index].image,
+                                    // height: double.infinity / widget.ratio!,
+                                    fit: BoxFit.cover,
                                   )
                                 : NetWorkImage(
                                     image: widget.items[index].image,
-                                    height: 160,
+                                    width: double.infinity,
+                                    height: 150,
                                     fit: BoxFit.cover,
+                                    radius: widget.radius ?? 0,
                                   ),
                           ),
                           if (widget.items[index].title != null)
@@ -132,19 +130,23 @@ class _SliderWidgetState extends State<SliderWidget> {
           else
             promotionsEmptyState,
           if (widget.showIndicator)
-            Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: DotsIndicator(
-                dotsCount: widget.items.length,
-                position: currentIndex,
-                decorator: DotsDecorator(
-                  color: const Color(0xffFFBED2),
-                  activeColor: const Color(0xffFF5D8F),
-                  size: const Size.square(12),
-                  activeSize: const Size.square(12),
-                  activeShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(11)),
+            Positioned(
+              bottom: 15,
+              child: Container(
+                width: (widget.width ?? 32) - 32,
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: DotsIndicator(
+                  dotsCount: widget.items.length,
+                  position: currentIndex,
+                  decorator: DotsDecorator(
+                    color: const Color.fromRGBO(255, 255, 255, 0.6),
+                    activeColor: const Color(0xffFFFFFF),
+                    size: const Size.square(8),
+                    activeSize: const Size.square(8),
+                    activeShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(11)),
+                  ),
                 ),
               ),
             )

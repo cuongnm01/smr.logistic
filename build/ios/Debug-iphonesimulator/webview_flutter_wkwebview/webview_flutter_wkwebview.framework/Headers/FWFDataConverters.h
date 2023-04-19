@@ -72,7 +72,6 @@ extern WKUserScriptInjectionTime FWFWKUserScriptInjectionTimeFromEnumData(
  *
  * @return A WKAudiovisualMediaType or -1 if data could not be converted.
  */
-API_AVAILABLE(ios(10.0))
 extern WKAudiovisualMediaTypes FWFWKAudiovisualMediaTypeFromEnumData(
     FWFWKAudiovisualMediaTypeEnumData *data);
 
@@ -150,5 +149,14 @@ extern FWFNSKeyValueChangeKeyEnumData *FWFNSKeyValueChangeKeyEnumDataFromNSKeyVa
  * @return A FWFWKScriptMessageData.
  */
 extern FWFWKScriptMessageData *FWFWKScriptMessageDataFromWKScriptMessage(WKScriptMessage *message);
+
+/**
+ * Converts a WKNavigationType to an FWFWKNavigationType.
+ *
+ * @param type The object containing information to create a FWFWKNavigationType
+ *
+ * @return A FWFWKNavigationType.
+ */
+extern FWFWKNavigationType FWFWKNavigationTypeFromWKNavigationType(WKNavigationType type);
 
 NS_ASSUME_NONNULL_END

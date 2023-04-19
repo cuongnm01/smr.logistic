@@ -10,7 +10,7 @@ GerenalResponse _$GerenalResponseFromJson(Map<String, dynamic> json) =>
     GerenalResponse(
       json['data'],
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -18,7 +18,7 @@ GerenalResponse _$GerenalResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GerenalResponseToJson(GerenalResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.data,

@@ -20,7 +20,7 @@ class AppColor {
   static Color borderPinkBoldColor = const Color(0xFFFF9EBC);
 
   //Text
-  static Color primaryTextColorLight = const Color(0xFFDF4D6F); // pink
+  static Color primaryTextColorLight = const Color(0xFFC62828); // pink
   static Color secondTextColorLight = const Color(0xFFFFFFFF); // white
   static Color thirdTextColorLight = const Color(0xFF000000); // black
   static Color fourthTextColorLight = const Color(0xFF4E4E4E); // light gray
@@ -57,7 +57,7 @@ class AppColor {
   static const Color primaryPink50 = Color(0xFFFCEEF1);
 
   // new text
-  static Color primaryColor = const Color(0xFF493083);
+  static Color primaryColor = const Color(0xFFC62828);
   static Color secondaryColor = const Color(0xFFF15A29);
   static Color primaryNavigationBarColor = const Color(0xFF373737);
   static Color baseColor = const Color(0xFF607D8B);

@@ -19,9 +19,9 @@ class TextFieldDecoration {
       fillColor: backgroundColor,
       hintStyle: hintStype ??
           AppTextStyle.regular().copyWith(
-                color: AppColor.sixTextColorLight,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColor.sixTextColorLight,
+            fontWeight: FontWeight.bold,
+          ),
       //errorStyle: AppTextStyle.textErrorStyle,
       //contentPadding: const EdgeInsets.all(10),
       border: UnderlineInputBorder(
@@ -69,9 +69,9 @@ class TextFieldDecoration {
       fillColor: backgroundColor,
       hintStyle: hintStype ??
           AppTextStyle.regular().copyWith(
-                color: AppColor.sixTextColorLight,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColor.sixTextColorLight,
+            fontWeight: FontWeight.bold,
+          ),
       contentPadding: const EdgeInsets.all(10),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(radius ?? 10),
@@ -116,9 +116,9 @@ class TextFieldDecoration {
       fillColor: backgroundColor,
       hintStyle: hintStype ??
           AppTextStyle.regular().copyWith(
-                color: AppColor.sixTextColorLight,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColor.sixTextColorLight,
+            fontWeight: FontWeight.bold,
+          ),
       contentPadding: contentPadding ?? null,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(radius ?? 0),
@@ -156,9 +156,9 @@ class TextFieldDecoration {
       fillColor: backgroundColor,
       hintStyle: hintStype ??
           AppTextStyle.regular().copyWith(
-                color: AppColor.sixTextColorLight,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColor.sixTextColorLight,
+            fontWeight: FontWeight.bold,
+          ),
       contentPadding: const EdgeInsets.all(10),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(radius ?? 10),

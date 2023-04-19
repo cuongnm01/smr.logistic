@@ -33,8 +33,12 @@ const Map<String, String> vi_VN = {
   'accept': 'Chấp nhận',
   'notif': 'Hệ thống đang sử dụng múi giờ Nhật Bản.',
   'change_pass': 'Thay đổi mật khẩu',
+  'data_requied': 'Dữ liệu bắt buộc',
+  'change_password': 'Đổi mật khẩu',
+  'logout': 'Đăng xuất',
+  'profile': 'Thông tin cá nhân',
 
-   /* Scroll refresher */
+  /* Scroll refresher */
   'scroll.refresher.reload': 'Tải lại',
   'scroll.refresher.reload.process': 'Tải lại...',
   'scroll.refresher.process': 'Đang xử lý...',
@@ -75,5 +79,5 @@ const Map<String, String> vi_VN = {
   'news.detail_title': 'Chi tiết tin tức',
   'news.empty': 'Chưa có tin tức cho ngôn ngữ này',
 
-
+  
 };

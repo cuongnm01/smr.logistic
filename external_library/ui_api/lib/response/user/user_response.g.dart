@@ -11,7 +11,7 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) => UserResponse(
           ? null
           : DataModel.fromJson(json['data'] as Map<String, dynamic>),
     )
-      ..status = json['status'] as int?
+      ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?
       ..base = json['base'] == null
           ? null
@@ -19,7 +19,7 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) => UserResponse(
 
 Map<String, dynamic> _$UserResponseToJson(UserResponse instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'isSuccess': instance.isSuccess,
       'message': instance.message,
       'base': instance.base,
       'data': instance.data,

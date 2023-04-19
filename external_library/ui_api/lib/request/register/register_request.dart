@@ -4,12 +4,23 @@ part 'register_request.g.dart';
 
 @JsonSerializable()
 class RegisterRequest {
+  final String userName;
+  final String passWord;
+  final String fullName;
+  final String phoneNumber;
   final String email;
-  final String password;
-  @JsonKey(name: 'password_confirm', defaultValue: '')
-  final String passwordConfirm;
+  final String address;
+  final String dob;
 
-  RegisterRequest(this.email, this.password, this.passwordConfirm);
+  RegisterRequest(
+    this.userName,
+    this.passWord,
+    this.fullName,
+    this.phoneNumber,
+    this.email,
+    this.address,
+    this.dob,
+  );
 
   factory RegisterRequest.fromJson(Map<String, dynamic> json) =>
       _$RegisterRequestFromJson(json);

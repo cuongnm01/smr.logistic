@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "smr.logistic",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "smr.logistic (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "smr.logistic (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "infrastructure",
+            "cwd": "external_library/infrastructure",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "infrastructure (profile mode)",
+            "cwd": "external_library/infrastructure",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "infrastructure (release mode)",
+            "cwd": "external_library/infrastructure",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ui_api",
+            "cwd": "external_library/ui_api",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ui_api (profile mode)",
+            "cwd": "external_library/ui_api",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ui_api (release mode)",
+            "cwd": "external_library/ui_api",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "data",
+            "cwd": "external_library/infrastructure/data",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

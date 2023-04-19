@@ -94,5 +94,6 @@
 
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
 </dict>
 </plist>

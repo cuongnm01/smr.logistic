@@ -7,13 +7,12 @@ import '../shared/network/constants/constants.dart';
 import '../shared/network/controllers/network_controller.dart';
 import '../shared/network/managers/network_manager.dart';
 import '../shared/utils/dialog_util.dart';
-import '../shared/widget_hico/dialog/normal_widget.dart';
+import '../shared/widget/dialog/normal_widget.dart';
 
 class BaseController extends FullLifeCycleController
     with FullLifeCycleMixin, NetworkManager, ListenErrorGraphQL {
   final _networkController = Get.find<NetworkController>();
   BuildContext? dialogErrorNetworkContext;
-
 
   @override
   Future<void> onInit() async {
@@ -62,7 +61,7 @@ class BaseController extends FullLifeCycleController
       await DialogUtil.showPopup(
         dialogSize: DialogSize.Popup,
         barrierDismissible: false,
-        backgroundColor: Colors.transparent, 
+        backgroundColor: Colors.transparent,
         child: NormalWidget(
           icon: IconConstants.icFail,
           title: 'notify.network.error'.tr,
