@@ -33,28 +33,26 @@ class OrderHistoryScreen extends GetView<OrderHistoryController> {
         backgroundColor: AppColor.primaryColor,
       ),
       body: SafeArea(
-        child: Expanded(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Obx(() => WidgetScrollviewRefresher(
-                  refreshController: controller.allRefreshController,
-                  onRefresh: controller.onRefresh,
-                  onLoading: controller.onLoading,
-                  isLoadMore: controller.isMore.value,
-                  child: ListView.separated(
-                    controller: controller.scrollController,
-                    itemCount: controller.listData.length,
-                    itemBuilder: (context, index) {
-                      return _buildItems(item: controller.listData[index]);
-                    },
-                    separatorBuilder: (context, index) => Divider(
-                      height: 1,
-                      thickness: 1,
-                      color: AppColor.dividerColor,
-                    ),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Obx(() => WidgetScrollviewRefresher(
+                refreshController: controller.allRefreshController,
+                onRefresh: controller.onRefresh,
+                onLoading: controller.onLoading,
+                isLoadMore: controller.isMore.value,
+                child: ListView.separated(
+                  controller: controller.scrollController,
+                  itemCount: controller.listData.length,
+                  itemBuilder: (context, index) {
+                    return _buildItems(item: controller.listData[index]);
+                  },
+                  separatorBuilder: (context, index) => Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: AppColor.dividerColor,
                   ),
-                )),
-          ),
+                ),
+              )),
         ),
       ),
     );

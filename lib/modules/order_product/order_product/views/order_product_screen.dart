@@ -13,7 +13,7 @@ class OrderProductScreen extends GetView<OrderProductController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         centerTitle: true,
         leading: GestureDetector(
@@ -34,29 +34,32 @@ class OrderProductScreen extends GetView<OrderProductController> {
         child: Column(
           children: [
             Expanded(
-              child: Obx(
-                () => Container(
-                  child: Form(
-                    key: controller.form,
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 10),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 16),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: buildRequired(),
-                        ),
-                        const SizedBox(height: 16),
-                      ],
+              child: SingleChildScrollView(
+                child: Obx(
+                  () => Container(
+                    child: Form(
+                      key: controller.form,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 16),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12)),
+                            child: buildRequired(),
+                          ),
+                          const SizedBox(height: 16),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
             Container(
+              color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -72,6 +75,7 @@ class OrderProductScreen extends GetView<OrderProductController> {
                 ],
               ),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),

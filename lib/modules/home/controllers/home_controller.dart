@@ -48,7 +48,9 @@ class HomeController extends BaseController {
 
   Future<void> viewDetail(int id) async {}
 
-  Future<void> viewProfile() async {}
+  Future<void> viewProfile() async {
+    await Get.toNamed(Routes.PROFILE);
+  }
 
   //goto service page
   Future<void> viewService(ServiceModel item) async {}

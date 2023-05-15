@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		oybrdbmgjd8KNg4+HIpJIiuDmuI=
+		Ok72RYQjD/XbM5ScUs5f5KeYBY0=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		i3Lbryvn2604Mq8u/vyv7mb/ZLA=
+		MLdjsHZl8k78r9NYmifeAQeloKY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		armdd8TYkPbQpnQ3PVjghfVhGMs=
+		2espcXe8teqx4RzsHTDZkqYr6ag=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/resource/assets_resources/bell/bell.mp3</key>
 		<data>
@@ -1809,7 +1809,7 @@
 		</data>
 		<key>Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal</key>
 		<data>
-		3J8QLoH/dEm3mGZ1FqtOGn79370=
+		R/bcGO4mtEY81AcmIDBnTSAgHu4=
 		</data>
 		<key>Frameworks/FirebaseCoreInternal.framework/Info.plist</key>
 		<data>
@@ -2419,7 +2419,7 @@
 		</data>
 		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
 		<data>
-		R13T6dS2f5yVuLLXXtPp67qoq2w=
+		sUe+D+HvWZ+vrlHAUAo3sYqEogA=
 		</data>
 		<key>Frameworks/device_info_plus.framework/Info.plist</key>
 		<data>
@@ -2802,7 +2802,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oOno4utyzOCLKq5hIxM9yBFJEGUkuQovMKxeVsck8LA=
+			nCBu+1W+8GgB6wTLRj47hKAYWTGjmi09I7ecgB2Eiwo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -2816,7 +2816,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aMMzK+dmeMPMoyTtIbbCMnsErlu+o2ieHNuEve9eiVA=
+			oO2B6hiLpvl40eqi8Cp0xEe4fTfqA0rN0FJXRh7TEvU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -2858,7 +2858,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oNK/QDDRLR8BkexavtDqFnmZpcvXMwJeKmDit29EA4w=
+			WUvV53cKYnRZSwGGuxqhjy8zhJbjWdHOkfnqjkp/7+g=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/resource/assets_resources/bell/bell.mp3</key>
@@ -5435,7 +5435,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			N/d9XEwmYkirvODyigOO0lbSmGvN8ud9Di8CoHAhrR4=
+			lBjgg3tzK0oywbXJuAexmIdX3Sk6Nr3XKK/OYGYp0+s=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseCoreInternal.framework/Info.plist</key>
@@ -6246,7 +6246,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gD/9aqrt5/3ZEUVr9molc/b9mgZ21RGXIfuam03NEVU=
+			O6ywpd+K+hJDYlA+Cew9xnERAyntdNhCbDSNc9UxTGk=
 			</data>
 		</dict>
 		<key>Frameworks/device_info_plus.framework/Info.plist</key>

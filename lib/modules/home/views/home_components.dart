@@ -22,19 +22,22 @@ extension HomeComponents on HomeScreen {
           ),
           const SizedBox(width: 14),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '${controller.userInfo.value?.fullName ?? ''}'.tr,
-                  style: AppTextStyle.heavy(color: Colors.white),
-                ),
-                Text(
-                  '@${controller.userInfo.value?.userName ?? ''}',
-                  style: AppTextStyle.regular(color: Colors.white),
-                ),
-              ],
+            child: GestureDetector(
+              onTap: controller.viewProfile,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${controller.userInfo.value?.fullName ?? ''}'.tr,
+                    style: AppTextStyle.heavy(color: Colors.white),
+                  ),
+                  Text(
+                    '@${controller.userInfo.value?.userName ?? ''}',
+                    style: AppTextStyle.regular(color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
           InkWell(
@@ -164,7 +167,8 @@ extension HomeComponents on HomeScreen {
             title.toUpperCase(),
             textAlign: TextAlign.center,
             maxLines: 1,
-            style: AppTextStyle.heavy(fontSize: 18, color: AppColor.primaryColor),
+            style:
+                AppTextStyle.heavy(fontSize: 18, color: AppColor.primaryColor),
           ),
           Text(
             description ?? '',

@@ -37,6 +37,7 @@ const Map<String, String> vi_VN = {
   'change_password': 'Đổi mật khẩu',
   'logout': 'Đăng xuất',
   'profile': 'Thông tin cá nhân',
+  'ok': 'OK',
 
   /* Scroll refresher */
   'scroll.refresher.reload': 'Tải lại',

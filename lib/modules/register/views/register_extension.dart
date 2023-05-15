@@ -128,23 +128,25 @@ extension _RegisterExtension on RegisterScreen {
   Widget _buildDob() {
     return GestureDetector(
       onTap: controller.showDateOptionModalBottomSheet,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        decoration: const BoxDecoration(
-            border: Border(bottom: BorderSide(width: 1, color: Colors.grey))),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              '${controller.dobText.value}',
-              style: AppTextStyle.regular(),
-            ),
-            const Icon(
-              Icons.calendar_month_outlined,
-              color: Colors.grey,
-              size: 20,
-            )
-          ],
+      child: Obx(
+        () => Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          decoration: const BoxDecoration(
+              border: Border(bottom: BorderSide(width: 1, color: Colors.grey))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '${controller.dobText.value}',
+                style: AppTextStyle.regular(),
+              ),
+              const Icon(
+                Icons.calendar_month_outlined,
+                color: Colors.grey,
+                size: 20,
+              )
+            ],
+          ),
         ),
       ),
     );

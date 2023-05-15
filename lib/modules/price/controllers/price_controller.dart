@@ -1,12 +1,11 @@
 
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../base/base_controller.dart';
 
 class PriceController extends BaseController {
   RxString content = ''.obs;
-  WebViewController webViewController = WebViewController();
+  // WebViewController webViewController = WebViewController();
 
   PriceController();
 

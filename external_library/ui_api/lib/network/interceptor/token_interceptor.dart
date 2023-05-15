@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 class TokenInterceptor extends Interceptor {
   static const List<int> unauthorizedTokenCodes = [401];
 
-  TokenInterceptor({required this.errorUnauthorized});
+  TokenInterceptor({required this.errorUnauthorized, required this.error400});
 
   // @override
   // void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
@@ -12,6 +12,7 @@ class TokenInterceptor extends Interceptor {
   // }
 
   Function() errorUnauthorized;
+  Function(String) error400;
 
   @override
   void onError(DioError error, ErrorInterceptorHandler handler) {
@@ -19,7 +20,11 @@ class TokenInterceptor extends Interceptor {
 
     if (error.response?.statusCode == 401) {
       errorUnauthorized();
-      print('[TokenInterceptor] onError'
+      print('[TokenInterceptor] onError 401'
+          '${error.message}');
+    } else if (error.response?.statusCode == 400) {
+      error400(error.response?.data['message']);
+      print('[TokenInterceptor] onError 400'
           '${error.message}');
     } else {
       super.onError(error, handler);

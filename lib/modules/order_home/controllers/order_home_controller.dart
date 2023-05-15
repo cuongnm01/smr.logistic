@@ -155,43 +155,73 @@ class OrderHomeController extends BaseController {
     await Get.toNamed(Routes.ORDER_PRODUCT)?.then((value) {
       if (value != null && value is ProductRequest) {
         products.add(value);
-        getFee();
+        if (request.serviceType != null && request.shippingType != null) {
+          getFee();
+        }
       }
     });
   }
 
   Future<void> getFee() async {
-    await EasyLoading.show();
-    await _uiRepository
-        .getFee(FeeRequest(
-            serviceType: request.serviceType,
-            shippingType: request.shippingType,
-            products: products))
-        .then((response) async {
-      await EasyLoading.dismiss();
-      if (response.isSuccess == CommonConstants.statusOk &&
-          response.data != null) {
-        total.value = response.data!.totalTemporaryPrice ?? 0;
-        products.refresh();
-      } else {
-        await DialogUtil.createDialogMessage(
-          title: 'notify.title'.tr,
-          message: response.message ?? 'notify.error'.tr,
-        );
-      }
-    }).catchError((onError) {
-      EasyLoading.dismiss();
-      DialogUtil.createDialogMessage(
-        title: 'notify.title'.tr,
-        message: 'notify.error'.tr,
+    if (request.serviceType == null) {
+      await DialogUtil.showPopup(
+        dialogSize: DialogSize.Popup,
+        barrierDismissible: false,
+        backgroundColor: Colors.transparent,
+        child: const NormalWidget(
+          title: 'Chưa chọn chiều vận chuyển',
+        ),
+        onVaLue: (value) {
+          return;
+        },
       );
-    });
+    } else if (request.shippingType == null) {
+      await DialogUtil.showPopup(
+        dialogSize: DialogSize.Popup,
+        barrierDismissible: false,
+        backgroundColor: Colors.transparent,
+        child: const NormalWidget(
+          title: 'Chưa chọn loại hình vận chuyển',
+        ),
+        onVaLue: (value) {
+          return;
+        },
+      );
+    } else {
+      await EasyLoading.show();
+      await _uiRepository
+          .getFee(FeeRequest(
+              serviceType: request.serviceType,
+              shippingType: request.shippingType,
+              products: products))
+          .then((response) async {
+        await EasyLoading.dismiss();
+        if (response.isSuccess == CommonConstants.statusOk &&
+            response.data != null) {
+          total.value = response.data!.totalTemporaryPrice ?? 0;
+          products.refresh();
+        } else {
+          await DialogUtil.createDialogMessage(
+            title: 'notify.title'.tr,
+            message: response.message ?? 'notify.error'.tr,
+          );
+        }
+      }).catchError((onError) {
+        EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr,
+          message: 'notify.error'.tr,
+        );
+      });
+    }
   }
 
   void removeProduct(int index) {
     products.removeAt(index);
     products.refresh();
-    getFee();
+    if (request.serviceType != null && request.shippingType != null) {
+      getFee();
+    }
   }
 
   void onSubmited() {

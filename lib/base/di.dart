@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:ui_api/datasource/remote/app_ui_api.dart';
@@ -19,6 +20,7 @@ import '../shared/constants/common.dart';
 import '../shared/services/config_service.dart';
 import '../shared/services/locator_service.dart';
 import '../shared/services/storage_service.dart';
+import '../shared/utils/dialog_util.dart';
 
 class DependencyInjection {
   static Future<void> init(String environment) async {
@@ -41,6 +43,10 @@ class DependencyInjection {
     _dioUIAPI.interceptors.add(TokenInterceptor(
       errorUnauthorized: () {
         Get.offAndToNamed(Routes.ONBOARDING, arguments: 'error.expires'.tr);
+      },
+      error400: (v) {
+        EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(title: 'notify.title'.tr, message: v);
       },
     ));
 
