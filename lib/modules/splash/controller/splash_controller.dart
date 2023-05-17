@@ -61,7 +61,7 @@ class SplashController extends GetxController {
         _loadData(response.loginModel!.userInfo!);
       } else {
         storage.setBool(StorageConstants.isLogin.toString(), false);
-        Get.offAndToNamed(Routes.MAIN);
+        Get.offAndToNamed(Routes.LOGIN);
       }
     }).catchError((error) {
       Get.offAndToNamed(Routes.LOGIN);
@@ -79,14 +79,6 @@ class SplashController extends GetxController {
 
       if (language == VIETNAMESE_LANG) {
         Get.updateLocale(const Locale('vi', 'VN'));
-      }
-
-      if (language == JAPANESE_LANG) {
-        Get.updateLocale(const Locale('ja', 'JP'));
-      }
-
-      if (language == ENGLISH_LANG) {
-        Get.updateLocale(const Locale('en', 'US'));
       }
     }
   }

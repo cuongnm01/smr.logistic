@@ -94,6 +94,7 @@ dependencies:
   webview_flutter: ^4.0.7
   easy_rich_text: ^1.1.0
   vibration: ^1.7.6
+  modal_bottom_sheet: ^3.0.0-pre
 
   #flutter3
   pull_to_refresh_flutter3: ^2.0.1

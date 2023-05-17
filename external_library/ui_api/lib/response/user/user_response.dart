@@ -7,7 +7,7 @@ part 'user_response.g.dart';
 @JsonSerializable()
 class UserResponse extends BaseResponse {
   @JsonKey(name: 'data')
-  DataModel? data;
+  UserInfoModel? data;
 
   UserResponse(this.data);
 

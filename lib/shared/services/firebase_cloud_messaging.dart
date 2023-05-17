@@ -396,8 +396,6 @@ class FirebaseMessageConfig {
   }
 
   void _showNotification(RemoteMessage message) {
-    reloadBalance();
-
     final channelId = message.data['channel_id'] ?? '';
 
     try {
@@ -458,16 +456,6 @@ class FirebaseMessageConfig {
     });
     _firebaseMessaging.onTokenRefresh.listen((token) {
       AppDataGlobal.firebaseToken = token;
-    });
-  }
-
-  Future<void> reloadBalance() async {
-    await _uiRepository.getInfo().then((response) {
-      if (response.isSuccess == CommonConstants.statusOk &&
-          response.data != null &&
-          response.data!.info != null) {
-        AppDataGlobal.userInfo = response.data!.info!;
-      }
     });
   }
 }

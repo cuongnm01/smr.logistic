@@ -8,6 +8,8 @@ import 'package:ui_api/response/user/user_response.dart';
 
 import '../../request/order/fee_request.dart';
 import '../../request/order/order_request.dart';
+import '../../request/user/changepass_request.dart';
+import '../../request/user/update_info_request.dart';
 import '../../response/category/categories_response.dart';
 import '../../response/master/service_type_response.dart';
 import '../../response/master/shipping_type_response.dart';
@@ -99,5 +101,17 @@ class AppUIRepositoryImpl extends AppUIRepository {
   @override
   Future<OrderResponse> getOrderDetail(String id) {
     return _api.getOrderDetail(id);
+  }
+
+  // update info
+  @override
+  Future<UserResponse> updateInfo(UpdateInfoRequest request) {
+    return _api.updateInfo(request);
+  }
+
+  // change pass
+  @override
+  Future<BaseResponse> changePass(ChangePassRequest request) {
+    return _api.changePass(request);
   }
 }

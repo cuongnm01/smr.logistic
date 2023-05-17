@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../resource/assets_constant/icon_constants.dart';
 import '../constants/colors.dart';
 import '../styles/text_style/text_style.dart';
+import '../widgets/button/widget_button.dart';
+import '../widgets/button/widget_text_button.dart';
 
 class BottomSheetUtil {
   BottomSheetUtil._();
@@ -97,5 +101,103 @@ class BottomSheetUtil {
         onVaLue(value);
       }
     });
+  }
+
+  static Future createConfirmBottomSheet({
+    required String title,
+    String message = '',
+    required String confirmTitle,
+    required Function() onConfirm,
+  }) async {
+    await showCupertinoModalBottomSheet(
+      context: Get.context!,
+      backgroundColor: AppColor.primaryBackgroundColor,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadiusDirectional.only(
+          topEnd: Radius.circular(16),
+          topStart: Radius.circular(16),
+        ),
+      ),
+      builder: (_) => SafeArea(
+        top: false,
+        child: Stack(
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 38.0,
+                  height: 3.0,
+                  margin: const EdgeInsets.only(top: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: AppColor.neutral8,
+                  ),
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 45, vertical: 12),
+                  child: Text(
+                    title,
+                    style: AppTextStyle.heavy(),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                message.isEmpty
+                    ? Container()
+                    : Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 12),
+                        child: Text(
+                          message,
+                          style: AppTextStyle.regular(),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(20, 24, 24, 10),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: WidgetButton(
+                          title: confirmTitle,
+                          backgroundButtonColor: AppColor.primaryColor,
+                          onPressed: () {
+                            Get.back();
+                            onConfirm();
+                          },
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 1, color: Colors.grey.shade400),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(8))),
+                          child: WidgetTextButton(
+                            title: 'Huỷ'.tr,
+                            onPressed: Get.back,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              right: 10,
+              top: 11,
+              child: IconButton(
+                onPressed: Get.back,
+                icon: const Icon(Icons.close),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

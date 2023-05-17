@@ -4,6 +4,8 @@ part 'product_request.g.dart';
 
 @JsonSerializable()
 class ProductRequest {
+  String? categoryId;
+  String? categoryName;
   String? productId;
   String? productName;
   double? price;
@@ -14,8 +16,11 @@ class ProductRequest {
   double? height;
   String? description;
   bool? isInsurance;
+  int? index;
 
   ProductRequest({
+    this.categoryId,
+    this.categoryName,
     this.productId,
     this.productName,
     this.price,
@@ -26,6 +31,7 @@ class ProductRequest {
     this.height,
     this.description,
     this.isInsurance,
+    this.index,
   });
 
   factory ProductRequest.fromJson(Map<String, dynamic> json) =>

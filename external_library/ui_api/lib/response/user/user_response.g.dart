@@ -9,7 +9,7 @@ part of 'user_response.dart';
 UserResponse _$UserResponseFromJson(Map<String, dynamic> json) => UserResponse(
       json['data'] == null
           ? null
-          : DataModel.fromJson(json['data'] as Map<String, dynamic>),
+          : UserInfoModel.fromJson(json['data'] as Map<String, dynamic>),
     )
       ..isSuccess = json['isSuccess'] as bool?
       ..message = json['message'] as String?

@@ -10,6 +10,8 @@ import 'package:ui_api/response/user/user_response.dart';
 
 import '../../request/order/fee_request.dart';
 import '../../request/order/order_request.dart';
+import '../../request/user/changepass_request.dart';
+import '../../request/user/update_info_request.dart';
 import '../../response/category/categories_response.dart';
 import '../../response/master/service_type_response.dart';
 import '../../response/master/shipping_type_response.dart';
@@ -88,4 +90,12 @@ abstract class AppUIAPI {
   Future<OrderResponse> getOrderDetail(
     @Path('id') String id,
   );
+
+  //Update user
+  @PUT('/app/v1/accounts')
+  Future<UserResponse> updateInfo(@Body() UpdateInfoRequest request);
+
+   //Update user
+  @PUT('/app/v1/accounts/change-password')
+  Future<BaseResponse> changePass(@Body() ChangePassRequest request);
 }

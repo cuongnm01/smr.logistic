@@ -24,8 +24,11 @@ abstract class Routes {
   static const CHANGE_PASS = '/change_pass';
 
   static const PROFILE = '/profile';
+  static const PROFILE_UPDATE = '/profile_update';
+
   static const ORDER_PRODUCT = '/order_product';
   static const CATEGORIES = '/categoris';
   static const PRODUCTS = '/products';
   static const ORDER_HISTORY = '/order_history';
+  static const ORDER_HISTORY_DETAIL = '/order_history_detail';
 }

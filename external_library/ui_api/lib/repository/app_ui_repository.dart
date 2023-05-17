@@ -7,6 +7,8 @@ import 'package:ui_api/response/user/user_response.dart';
 
 import '../request/order/fee_request.dart';
 import '../request/order/order_request.dart';
+import '../request/user/changepass_request.dart';
+import '../request/user/update_info_request.dart';
 import '../response/category/categories_response.dart';
 import '../response/master/service_type_response.dart';
 import '../response/master/shipping_type_response.dart';
@@ -61,4 +63,10 @@ abstract class AppUIRepository {
 
   // get order detail
   Future<OrderResponse> getOrderDetail(String id);
+
+  // update info
+  Future<UserResponse> updateInfo(UpdateInfoRequest request);
+
+  // change pass
+  Future<BaseResponse> changePass(ChangePassRequest request);
 }

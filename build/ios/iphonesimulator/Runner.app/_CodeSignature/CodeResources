@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Ok72RYQjD/XbM5ScUs5f5KeYBY0=
+		aiITSdnGjyuUz1d+0mkTxM/DptU=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		MLdjsHZl8k78r9NYmifeAQeloKY=
+		wbgBjeHgBypLlYJXlF4NfdIw3rw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		At15lCMH2/HushJCyV2gOXSOPfI=
+		EcrfKybmizGZb6NNb1aIkRenb38=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		2espcXe8teqx4RzsHTDZkqYr6ag=
+		W0KNyhMTcjkwIZhe6cV1YDyNTP4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/resource/assets_resources/bell/bell.mp3</key>
 		<data>
@@ -1809,7 +1809,7 @@
 		</data>
 		<key>Frameworks/FirebaseCoreInternal.framework/FirebaseCoreInternal</key>
 		<data>
-		R/bcGO4mtEY81AcmIDBnTSAgHu4=
+		3J8QLoH/dEm3mGZ1FqtOGn79370=
 		</data>
 		<key>Frameworks/FirebaseCoreInternal.framework/Info.plist</key>
 		<data>
@@ -2419,7 +2419,7 @@
 		</data>
 		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
 		<data>
-		sUe+D+HvWZ+vrlHAUAo3sYqEogA=
+		R13T6dS2f5yVuLLXXtPp67qoq2w=
 		</data>
 		<key>Frameworks/device_info_plus.framework/Info.plist</key>
 		<data>
@@ -2802,7 +2802,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nCBu+1W+8GgB6wTLRj47hKAYWTGjmi09I7ecgB2Eiwo=
+			4uQSGXEeJhmoov1ur0Nrx7OHTDBVML++piMIotEtoTY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -2816,7 +2816,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oO2B6hiLpvl40eqi8Cp0xEe4fTfqA0rN0FJXRh7TEvU=
+			BZUozcf3ywd8gadw41/x+7xMypwRDuWRg4Nd9rRWAe0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -2837,7 +2837,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5YLct5fycQ/oNNdze63c36arydA8H5UU1vofs6Wfx8I=
+			Cn+Ma0QSDzwdqI/8HZ4HE9jODhCGbxMIhr6zIMjhbX0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -2858,7 +2858,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WUvV53cKYnRZSwGGuxqhjy8zhJbjWdHOkfnqjkp/7+g=
+			PM+XTshRw3FFiY2plUAVErhEzl+GGdSxjBhMFn0lbFM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/resource/assets_resources/bell/bell.mp3</key>
@@ -5435,7 +5435,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lBjgg3tzK0oywbXJuAexmIdX3Sk6Nr3XKK/OYGYp0+s=
+			N/d9XEwmYkirvODyigOO0lbSmGvN8ud9Di8CoHAhrR4=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseCoreInternal.framework/Info.plist</key>
@@ -6246,7 +6246,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O6ywpd+K+hJDYlA+Cew9xnERAyntdNhCbDSNc9UxTGk=
+			gD/9aqrt5/3ZEUVr9molc/b9mgZ21RGXIfuam03NEVU=
 			</data>
 		</dict>
 		<key>Frameworks/device_info_plus.framework/Info.plist</key>

@@ -50,6 +50,7 @@ class WidgetBuildFormTextField extends StatelessWidget {
           keyboardType: textInputType,
           readOnly: disable,
           maxLines: maxLines,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           style: AppTextStyle.regular(
               color:
                   disable ? const Color(0xFF9098A1) : const Color(0xFF000000)),

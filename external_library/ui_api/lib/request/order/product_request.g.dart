@@ -8,6 +8,8 @@ part of 'product_request.dart';
 
 ProductRequest _$ProductRequestFromJson(Map<String, dynamic> json) =>
     ProductRequest(
+      categoryId: json['categoryId'] as String?,
+      categoryName: json['categoryName'] as String?,
       productId: json['productId'] as String?,
       productName: json['productName'] as String?,
       price: (json['price'] as num?)?.toDouble(),
@@ -18,10 +20,13 @@ ProductRequest _$ProductRequestFromJson(Map<String, dynamic> json) =>
       height: (json['height'] as num?)?.toDouble(),
       description: json['description'] as String?,
       isInsurance: json['isInsurance'] as bool?,
+      index: json['index'] as int?,
     );
 
 Map<String, dynamic> _$ProductRequestToJson(ProductRequest instance) =>
     <String, dynamic>{
+      'categoryId': instance.categoryId,
+      'categoryName': instance.categoryName,
       'productId': instance.productId,
       'productName': instance.productName,
       'price': instance.price,
@@ -32,4 +37,5 @@ Map<String, dynamic> _$ProductRequestToJson(ProductRequest instance) =>
       'height': instance.height,
       'description': instance.description,
       'isInsurance': instance.isInsurance,
+      'index': instance.index,
     };
