@@ -52,12 +52,12 @@ extension ChangePassExtension on ChangePassScreen {
           borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
-        disabledBorder:  OutlineInputBorder(
-          borderRadius:const BorderRadius.all(Radius.circular(4)),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
-        enabledBorder:  OutlineInputBorder(
-          borderRadius:const BorderRadius.all(Radius.circular(4)),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
         border: const OutlineInputBorder(
@@ -106,12 +106,12 @@ extension ChangePassExtension on ChangePassScreen {
           borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
-        disabledBorder:  OutlineInputBorder(
-          borderRadius:const BorderRadius.all(Radius.circular(4)),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
-        enabledBorder:  OutlineInputBorder(
-          borderRadius:const BorderRadius.all(Radius.circular(4)),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Colors.grey.shade300),
         ),
         border: const OutlineInputBorder(
@@ -136,7 +136,9 @@ extension ChangePassExtension on ChangePassScreen {
         child: GestureDetector(
       onTap: controller.onSubmit,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        width: Get.width,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
             color: AppColor.primaryColor,
             borderRadius: BorderRadius.circular(10)),

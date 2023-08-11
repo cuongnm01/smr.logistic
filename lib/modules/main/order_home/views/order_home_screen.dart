@@ -30,6 +30,18 @@ class OrderHomeScreen extends GetView<OrderHomeController> {
         ),
         elevation: 0,
         backgroundColor: AppColor.primaryColor,
+        actions: [
+          GestureDetector(
+            onTap: controller.onReset,
+            child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                color: Colors.transparent,
+                child: const Icon(
+                  Icons.restart_alt,
+                  size: 26,
+                )),
+          ),
+        ],
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -61,7 +73,6 @@ class OrderHomeScreen extends GetView<OrderHomeController> {
                       title: 'Thông tin yêu cầu',
                       expansionChildren: buildRequired(),
                     ),
-                    
                   ),
                   const SizedBox(height: 20),
                   Container(

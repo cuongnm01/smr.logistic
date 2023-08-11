@@ -65,7 +65,7 @@ class MainScreen extends GetView<MainController> {
                         color: AppColor.primaryColor,
                       ),
                     ),
-                    label: 'Đơn giá'.tr,
+                    label: 'Bảng giá'.tr,
                   ),
                   BottomNavigationBarItem(
                     icon: const Padding(
@@ -107,7 +107,7 @@ class MainScreen extends GetView<MainController> {
                         color: AppColor.primaryColor,
                       ),
                     ),
-                    label: 'Tài khoản'.tr,
+                    label: 'Đơn hàng'.tr,
                   ),
                 ]),
           ),

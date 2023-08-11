@@ -42,11 +42,15 @@ class DependencyInjection {
 
     _dioUIAPI.interceptors.add(TokenInterceptor(
       errorUnauthorized: () {
-        Get.offAndToNamed(Routes.ONBOARDING, arguments: 'error.expires'.tr);
+        Get.offAndToNamed(Routes.LOGIN, arguments: 'error.expires'.tr);
       },
-      error400: (v) {
+      errorAction: (v, isLogin) {
         EasyLoading.dismiss();
         DialogUtil.createDialogMessage(title: 'notify.title'.tr, message: v);
+      },
+      errorMsg: (msg) {
+        EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(title: 'notify.title'.tr, message: msg);
       },
     ));
 

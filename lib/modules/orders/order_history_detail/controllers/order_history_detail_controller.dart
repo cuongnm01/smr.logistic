@@ -42,6 +42,8 @@ class OrderHistoryDetailController extends BaseController {
       });
     } catch (e) {
       await EasyLoading.dismiss();
+      await DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr, message: 'notify.error'.tr);
     }
   }
 

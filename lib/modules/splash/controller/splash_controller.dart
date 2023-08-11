@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ui_api/models/user/user_info_model.dart';
@@ -10,6 +11,7 @@ import '../../../routes/app_pages.dart';
 import '../../../shared/constants/common.dart';
 import '../../../shared/constants/storage.dart';
 import '../../../shared/services/firebase_cloud_messaging.dart';
+import '../../../shared/utils/dialog_util.dart';
 
 class SplashController extends GetxController {
   final _uiRepository = Get.find<AppUIRepository>();
@@ -54,7 +56,8 @@ class SplashController extends GetxController {
             password: password,
             deviceIdentifier: AppDataGlobal.firebaseToken))
         .then((response) {
-      if (response.isSuccess == CommonConstants.statusOk &&
+      if (response.isSuccess != null &&
+          response.isSuccess == CommonConstants.statusOk &&
           response.loginModel != null &&
           response.loginModel!.userInfo != null) {
         AppDataGlobal.accessToken = response.loginModel!.token ?? '';
@@ -96,18 +99,38 @@ class SplashController extends GetxController {
   }
 
   Future<void> _loadMasterData() async {
-    await _uiRepository.getShippingType().then((response) {
-      if (response.isSuccess == CommonConstants.statusOk &&
-          response.data != null) {
-        AppDataGlobal.shippingType = response.data!;
-      }
-    });
-    await _uiRepository.getServiceType().then((response) {
-      if (response.isSuccess == CommonConstants.statusOk &&
-          response.data != null) {
-        AppDataGlobal.serviceType = response.data!;
-      }
-    });
+    try {
+      await _uiRepository.getShippingType().then((response) {
+        if (response.isSuccess == CommonConstants.statusOk &&
+            response.data != null) {
+          AppDataGlobal.shippingType = response.data!;
+        }
+      }).catchError((onError) {
+        EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr,
+          message: 'notify.error'.tr,
+        );
+      });
+      await _uiRepository.getServiceType().then((response) {
+        if (response.isSuccess == CommonConstants.statusOk &&
+            response.data != null) {
+          AppDataGlobal.serviceType = response.data!;
+        }
+      }).catchError((onError) {
+        EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr,
+          message: 'notify.error'.tr,
+        );
+      });
+    } catch (e) {
+      await EasyLoading.dismiss();
+      await DialogUtil.createDialogMessage(
+        title: 'notify.title'.tr,
+        message: 'notify.error'.tr,
+      );
+    }
   }
 
   Future<void> _loadData(UserInfoModel user) async {

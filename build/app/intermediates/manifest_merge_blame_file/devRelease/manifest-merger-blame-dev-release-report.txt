@@ -761,35 +761,89 @@
 409            android:required="false" />
 409-->[androidx.window:window:1.0.0-beta04] /Users/cuongnm/.gradle/caches/transforms-3/ad8c95ceda281f4aea17ce8f56daf6ef/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
 410
-411        <service
-411-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:29:9-35:19
-412            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-412-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:30:13-103
-413            android:exported="false" >
-413-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:31:13-37
-414            <meta-data
-414-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:32:13-34:39
-415                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-415-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:33:17-94
-416                android:value="cct" />
-416-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:34:17-36
-417        </service>
-418        <service
-418-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:26:9-30:19
-419            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-419-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:27:13-117
-420            android:exported="false"
-420-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:28:13-37
-421            android:permission="android.permission.BIND_JOB_SERVICE" >
-421-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:29:13-69
-422        </service>
-423
-424        <receiver
-424-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:32:9-34:40
-425            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-425-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:33:13-132
-426            android:exported="false" />
-426-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:34:13-37
-427    </application>
-428
-429</manifest>
+411        <provider
+411-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+412            android:name="androidx.startup.InitializationProvider"
+412-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:25:13-67
+413            android:authorities="com.smr.logistic.androidx-startup"
+413-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:26:13-68
+414            android:exported="false" >
+414-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:27:13-37
+415            <meta-data
+415-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+416                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+416-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+417                android:value="androidx.startup" />
+417-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+418        </provider>
+419
+420        <receiver
+420-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+421            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+421-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+422            android:directBootAware="false"
+422-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+423            android:enabled="true"
+423-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+424            android:exported="true"
+424-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+425            android:permission="android.permission.DUMP" >
+425-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+426            <intent-filter>
+426-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+427                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+427-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+427-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+428            </intent-filter>
+429            <intent-filter>
+429-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+430                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+430-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+430-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+431            </intent-filter>
+432            <intent-filter>
+432-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+433                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+433-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+433-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+434            </intent-filter>
+435            <intent-filter>
+435-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+436                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+436-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+436-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/cuongnm/.gradle/caches/transforms-3/ec392a87024b124b367f422d998197a0/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+437            </intent-filter>
+438        </receiver>
+439
+440        <service
+440-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:29:9-35:19
+441            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+441-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:30:13-103
+442            android:exported="false" >
+442-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:31:13-37
+443            <meta-data
+443-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:32:13-34:39
+444                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+444-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:33:17-94
+445                android:value="cct" />
+445-->[com.google.android.datatransport:transport-backend-cct:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/2b39fec4cfab6177354f38f89e67bee0/transformed/jetified-transport-backend-cct-3.1.6/AndroidManifest.xml:34:17-36
+446        </service>
+447        <service
+447-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:26:9-30:19
+448            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+448-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:27:13-117
+449            android:exported="false"
+449-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:28:13-37
+450            android:permission="android.permission.BIND_JOB_SERVICE" >
+450-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:29:13-69
+451        </service>
+452
+453        <receiver
+453-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:32:9-34:40
+454            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+454-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:33:13-132
+455            android:exported="false" />
+455-->[com.google.android.datatransport:transport-runtime:3.1.6] /Users/cuongnm/.gradle/caches/transforms-3/84d713434a92424ef34df53499837cd5/transformed/jetified-transport-runtime-3.1.6/AndroidManifest.xml:34:13-37
+456    </application>
+457
+458</manifest>

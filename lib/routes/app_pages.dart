@@ -20,6 +20,8 @@ import '../modules/orders/order_product/bindings/order_product_binding.dart';
 import '../modules/orders/order_product/views/order_product_screen.dart';
 import '../modules/orders/products/bindings/products_binding.dart';
 import '../modules/orders/products/views/products_screen.dart';
+import '../modules/profile/account_overview/bindings/account_overview_binding.dart';
+import '../modules/profile/account_overview/views/account_overview_screen.dart';
 import '../modules/profile/profile/bindings/profile_binding.dart';
 import '../modules/profile/profile/views/profile_screen.dart';
 import '../modules/profile/profile_update/bindings/profile_update_binding.dart';
@@ -62,6 +64,11 @@ final routePages = [
     page: () => MainScreen(),
     binding: MainBinding(),
   ),
+  GetPage(
+    name: Routes.ACCOUNT_OVERVIEW,
+    page: () => AccountOverviewScreen(),
+    binding: AccountOverviewBinding(),
+  ),
 
   GetPage(
     name: Routes.PROFILE,
@@ -93,7 +100,7 @@ final routePages = [
     page: () => OrderHistoryScreen(),
     binding: OrderHistoryBinding(),
   ),
- GetPage(
+  GetPage(
     name: Routes.ORDER_HISTORY_DETAIL,
     page: () => OrderHistoryDetailScreen(),
     binding: OrderHistoryDetailBinding(),

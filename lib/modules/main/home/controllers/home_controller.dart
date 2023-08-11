@@ -42,7 +42,9 @@ class HomeController extends BaseController {
   Future<void> viewDetail(int id) async {}
 
   Future<void> viewProfile() async {
-    await Get.toNamed(Routes.PROFILE);
+    await Get.toNamed(Routes.ACCOUNT_OVERVIEW)?.then((value) {
+      userInfo.value = AppDataGlobal.userInfo;
+    });
   }
 
   //goto service page

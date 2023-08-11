@@ -10,11 +10,12 @@ import '../../contact/controllers/contact_controller.dart';
 import '../../contact/views/contact_screen.dart';
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home_screen.dart';
+import '../../order_history/controllers/order_history_controller.dart';
+import '../../order_history/views/order_history_screen.dart';
 import '../../order_home/controllers/order_home_controller.dart';
 import '../../order_home/views/order_home_screen.dart';
 import '../../price/controllers/price_controller.dart';
 import '../../price/views/price_screen.dart';
-
 
 class MainController extends BaseController {
   Rx<int> index = Rx(0);
@@ -25,6 +26,7 @@ class MainController extends BaseController {
   final orderHomeController = OrderHomeController();
   final priceController = PriceController();
   final contactController = ContactController();
+  final orderHistoryController = OrderHistoryController();
 
   final accountController = AccountController();
   // int? tab;
@@ -36,7 +38,8 @@ class MainController extends BaseController {
       PriceScreen(priceController),
       OrderHomeScreen(orderHomeController),
       ContactScreen(contactController),
-      AccountScreen(accountController),
+      OrderHistoryScreen(orderHistoryController),
+      // AccountScreen(accountController),
     ];
   }
 
@@ -59,7 +62,7 @@ class MainController extends BaseController {
       } else if (_index == 3) {
         await contactController.onInit();
       } else if (_index == 4) {
-        await accountController.onInit();
+        orderHistoryController.onRefresh;
       }
     }
     index.value = _index;

@@ -12,7 +12,7 @@ class ProfileUpdateScreen extends GetView<ProfileUpdateController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         centerTitle: true,
         leading: GestureDetector(

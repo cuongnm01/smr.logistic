@@ -63,17 +63,9 @@ class CategoriesController extends BaseController {
         );
       }
     }).catchError((onError) {
-      DialogUtil.showPopup(
-        dialogSize: DialogSize.Popup,
-        barrierDismissible: false,
-        backgroundColor: Colors.transparent,
-        child: const NormalWidget(
-          title: 'Có lỗi xảy ra',
-        ),
-        onVaLue: (value) {
-          return;
-        },
-      );
+      EasyLoading.dismiss();
+      DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr, message: 'notify.error'.tr);
     });
   }
 }

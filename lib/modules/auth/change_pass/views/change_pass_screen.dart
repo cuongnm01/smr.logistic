@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../../shared/constants/colors.dart';
 import '../../../../shared/decoration/text_field_decoration.dart';
 import '../../../../shared/styles/text_style/text_style.dart';
-import '../../../../shared/widget/form/widget_form_text_field.dart';
 import '../controllers/change_pass_controller.dart';
 
 part 'change_pass_extension.dart';
@@ -13,7 +12,7 @@ class ChangePassScreen extends GetView<ChangePassController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         centerTitle: true,
         leading: GestureDetector(
@@ -48,7 +47,7 @@ class ChangePassScreen extends GetView<ChangePassController> {
                       children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 16),
+                              horizontal: 20, vertical: 16),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12)),

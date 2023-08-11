@@ -18,7 +18,6 @@ import '../../../../shared/utils/dialog_util.dart';
 import '../../../../shared/widget/dialog/date_picker.dart';
 import '../../../../shared/widget/dialog/normal_widget.dart';
 
-
 class RegisterController extends BaseController {
   final registerForm = GlobalKey<FormState>();
   final TextEditingController usernameController = TextEditingController();
@@ -91,8 +90,7 @@ class RegisterController extends BaseController {
               barrierDismissible: false,
               backgroundColor: Colors.transparent,
               child: NormalWidget(
-                icon: IconConstants.icSuccess,
-                title: response.message,
+                title: 'Đăng ký thành công'.tr,
               ),
               onVaLue: (value) {
                 storage.setString(
@@ -110,17 +108,25 @@ class RegisterController extends BaseController {
               barrierDismissible: false,
               backgroundColor: Colors.transparent,
               child: NormalWidget(
-                icon: IconConstants.icFail,
                 title: response.message,
               ),
             );
           }
-
           return;
+        }).catchError((onError) {
+          EasyLoading.dismiss();
+          DialogUtil.createDialogMessage(
+            title: 'notify.title'.tr,
+            message: 'notify.error'.tr,
+          );
         });
       }
     } catch (e) {
       await EasyLoading.dismiss();
+      await DialogUtil.createDialogMessage(
+        title: 'notify.title'.tr,
+        message: 'notify.error'.tr,
+      );
     }
   }
 

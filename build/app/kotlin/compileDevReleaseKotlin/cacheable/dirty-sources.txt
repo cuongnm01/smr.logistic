@@ -1,0 +1,1 @@
+/Users/LocalFile/SourceCode/App/Sapp/smr.logistic/android/app/src/main/kotlin/com/mobile/app/MainActivity.kt

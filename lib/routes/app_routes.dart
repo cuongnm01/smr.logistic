@@ -23,6 +23,7 @@ abstract class Routes {
   static const ACCOUNT = '/account';
   static const CHANGE_PASS = '/change_pass';
 
+  static const ACCOUNT_OVERVIEW = '/account_overview';
   static const PROFILE = '/profile';
   static const PROFILE_UPDATE = '/profile_update';
 

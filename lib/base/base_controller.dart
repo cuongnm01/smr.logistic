@@ -13,6 +13,7 @@ class BaseController extends FullLifeCycleController
     with FullLifeCycleMixin, NetworkManager, ListenErrorGraphQL {
   final _networkController = Get.find<NetworkController>();
   BuildContext? dialogErrorNetworkContext;
+  var _hasNetwork = true;
 
   @override
   Future<void> onInit() async {
@@ -43,10 +44,13 @@ class BaseController extends FullLifeCycleController
   }
 
   Future _updateConnectNetwork(int status) async {
-    if (status == NO_NETWORK) {
-      Get.back();
-      await _callDialogErrorNetwork();
+   if (status == NO_NETWORK) {
+      if (_hasNetwork) {
+        _hasNetwork = false;
+        await _callDialogErrorNetwork();
+      }
     } else {
+      _hasNetwork = true;
       if (dialogErrorNetworkContext != null) {
         Navigator.of(dialogErrorNetworkContext!, rootNavigator: true).pop();
         dialogErrorNetworkContext = null;
@@ -64,7 +68,7 @@ class BaseController extends FullLifeCycleController
         backgroundColor: Colors.transparent,
         child: NormalWidget(
           icon: IconConstants.icFail,
-          title: 'notify.network.error'.tr,
+          title: 'Vui lòng kiểm tra kết nối mạng'.tr,
         ),
         onVaLue: (value) async {
           dialogErrorNetworkContext = null;

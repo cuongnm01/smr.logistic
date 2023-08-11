@@ -57,7 +57,7 @@ const Map<String, String> vi_VN = {
   'notify.server.upgrading.message':
       'Hiện server đang trong quá trình bảo trì, nội dung và thời gian sẽ có thông báo cụ thể tới khách hàng. Nếu khách hàng có bất kỳ thắc mắc hoặc sự bất tiện nào, xin liên hệ bộ phận chăm sóc khách hàng để được hỗ trợ ! Xin cảm ơn.',
   'notify.network.error': 'Không có kết nối mạng!',
-  'notify.error': 'Có lỗi xẩy ra!',
+  'notify.error': 'Hệ thống đang có lỗi xảy ra.\n Vui lòng truy cập lại sau!',
   'error.expires': 'Phiên làm việc hết hạn!',
   'error.too.large': 'Tệp tải lên quá lớn!',
   'error.no.data': 'Không có dữ liệu',
@@ -79,6 +79,4 @@ const Map<String, String> vi_VN = {
   'news.title': 'Tin tức',
   'news.detail_title': 'Chi tiết tin tức',
   'news.empty': 'Chưa có tin tức cho ngôn ngữ này',
-
-  
 };

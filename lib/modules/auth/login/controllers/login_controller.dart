@@ -46,11 +46,7 @@ class LoginController extends BaseController {
     return super.onReady();
   }
 
-  @override
-  void onClose() {}
-
   Future<void> onLogin() async {
-    // await Get.toNamed(Routes.MAIN);
     if (formLogin.currentState?.validate() ?? false) {
       await EasyLoading.show();
       hideKeyboard(Get.overlayContext!);
@@ -92,6 +88,10 @@ class LoginController extends BaseController {
     }).catchError(
       (onError) {
         EasyLoading.dismiss();
+        DialogUtil.createDialogMessage(
+          title: 'notify.title'.tr,
+          message: 'notify.error'.tr,
+        );
       },
     );
   }

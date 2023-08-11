@@ -40,7 +40,7 @@ class PriceScreen extends GetView<PriceController> {
         centerTitle: true,
         leading: Container(),
         title: Text(
-          'Báo giá',
+          'Bảng giá',
           style: AppTextStyle.heavy(color: Colors.white, fontSize: 20),
         ),
         elevation: 1,

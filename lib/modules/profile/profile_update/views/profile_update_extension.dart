@@ -72,7 +72,9 @@ extension ProfileUpdateExtension on ProfileUpdateScreen {
         child: GestureDetector(
       onTap: controller.onSubmit,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        width: Get.width,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
             color: AppColor.primaryColor,
             borderRadius: BorderRadius.circular(10)),

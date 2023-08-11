@@ -19,7 +19,6 @@ import '../../../../shared/widget/dialog/normal_widget.dart';
 import '../../../../shared/widget/form/widget_menu_option.dart';
 import '../../../../shared/widget/form/widget_radio_option.dart';
 
-
 class OrderHomeController extends BaseController {
   final _uiRepository = Get.find<AppUIRepository>();
   final form = GlobalKey<FormState>();
@@ -226,6 +225,22 @@ class OrderHomeController extends BaseController {
     if (request.serviceType != null && request.shippingType != null) {
       getFee();
     }
+  }
+
+  Future<void> onReset() async {
+    await DialogUtil.createDialogConfirm(
+        title: 'Xoá dữ liệu'.tr,
+        message: 'Xác nhận xoá dữ liệu'.tr,
+        confirmTitle: 'Đồng ý',
+        onConfirm: _onReset);
+  }
+
+  void _onReset() {
+    request = OrderRequest();
+    serviceTypeText.value = '';
+    shippingTypeText.value = '';
+    products.value = [];
+    total.value = 0;
   }
 
   Future<void> getFee() async {

@@ -1,4 +1,0 @@
-#Wed May 17 11:54:42 ICT 2023
-base.0=/Users/LocalFile/SourceCode/App/Sapp/smr.logistic/build/app/intermediates/dex/devRelease/minifyDevReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

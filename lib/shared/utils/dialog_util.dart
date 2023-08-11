@@ -282,7 +282,7 @@ class DialogUtil {
               ),
               contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
               content: Container(
-                width: Get.width * 0.9,
+                width: Get.width * 0.7,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -298,7 +298,7 @@ class DialogUtil {
                         Expanded(
                           child: WidgetButton(
                             title: confirmTitle,
-                            backgroundButtonColor: AppColor.stateError,
+                            backgroundButtonColor: AppColor.primaryColor,
                             onPressed: () {
                               Navigator.pop(context);
                               onConfirm();
@@ -308,7 +308,7 @@ class DialogUtil {
                         const SizedBox(width: 10),
                         Expanded(
                           child: WidgetTextButton(
-                            title: 'cancel'.tr,
+                            title: 'Huỷ'.tr,
                             onPressed: () => Navigator.pop(context),
                           ),
                         )
